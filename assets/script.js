@@ -1,6 +1,29 @@
+let totalQuantity = 1
 
-let voteforDown = document.querySelector("#quantity-down")
-let voteforUp = document.querySelector("#quantity-up")
+// reference text 
+let quantityText = document.querySelector(".total-quantity")
 
-console.log("Votes for down", voteforDown)
-console.log("Votes for up",voteforUp )
+//refrence buttons
+let downButton = document.querySelector("#quantity-down")
+let upButton = document.querySelector("#quantity-up")
+
+
+// function 
+downButton.addEventListener("click", function(){
+    //window.alert("down button clicked")
+    if (totalQuantity > 0){
+        totalQuantity = totalQuantity - 1
+        quantityText.textContent = "Quantity: "+ totalQuantity
+    }
+})
+
+upButton.addEventListener("click", function(){
+    //window.alert("up button clicked")
+    totalQuantity = totalQuantity + 1
+
+    quantityText.textContent = "Quantity: "+ totalQuantity
+
+
+})
+
+
